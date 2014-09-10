@@ -18,9 +18,9 @@ SYNOPSIS
        }
 
 DESCRIPTION
-    This package allows you access to your caller's lexical variables,
-    without them knowing! Full read/write access. This is generally a pretty
-    bad idea, hence the Acme namespace.
+    This package allows you access to your caller's lexical variables, without
+    them knowing! Full read/write access. This is generally a pretty bad idea,
+    hence the Acme namespace.
 
     You can steal scalars, arrays and hashes:
 
@@ -33,11 +33,10 @@ DESCRIPTION
     Generally everything should "just work" as you expect it to. Except when
     it does not.
 
-    Technically speaking, your stolen $car is a package-scoped ("our")
-    variable which is lexically aliased ("local *car") to the caller's
-    variable of the same name. Because "steal" is parsed at compile-time,
-    you don't need to (and indeed should not!) pre-declare your stolen
-    variables.
+    Technically speaking, your stolen $car is a package-scoped (`our`)
+    variable which is lexically aliased (`local *car`) to the caller's
+    variable of the same name. Because `steal` is parsed at compile-time, you
+    don't need to (and indeed should not!) pre-declare your stolen variables.
 
        sub greet_verbally {
           my $name;   # don't do this!
@@ -52,12 +51,12 @@ DESCRIPTION
        steal 1 @boats;  # caller's caller's @boats
        steal 2 %stash;  # caller's caller's caller's @stash
 
-    You cannot indicate the level you wish to steal from using a variable;
-    it must be a literal integer in your source code. (It can be in decimal,
+    You cannot indicate the level you wish to steal from using a variable; it
+    must be a literal integer in your source code. (It can be in decimal,
     octal, hexadecimal or binary notation.) The integer must immediately
-    follow the "steal" keyword, and not be followed by a comma.
+    follow the `steal` keyword, and not be followed by a comma.
 
-    The "steal" keyword cannot be used in an expression; it must be a
+    The `steal` keyword cannot be used in an expression; it must be a
     standalone statement.
 
        steal $foo;
@@ -76,10 +75,10 @@ DESCRIPTION
     exception will be thrown.
 
 WHY YOU SHOULD NOT USE THIS MODULE
-    When people declare lexical ("my") variables within a sub, they (quite
+    When people declare lexical (`my`) variables within a sub, they (quite
     reasonably) expect these to stay local to the sub. If they rename those
-    variables, change them (say replacing a hashref with a hash), drop them
-    or whatever, then they don't expect code outside the sub to pay much
+    variables, change them (say replacing a hashref with a hash), drop them or
+    whatever, then they don't expect code outside the sub to pay much
     attention.
 
     Peeking at your caller's lexicals breaks those expectations.
@@ -102,7 +101,7 @@ SEE ALSO
 
     Data::Alias - a slightly more sane way of creating lexical aliases.
 
-    This package was initially published on PerlMonks as "Acme::Asplode"
+    This package was initially published on PerlMonks as `Acme::Asplode`
     <http://www.perlmonks.org/?node_id=1008814>, but I prefer the current
     name.
 
@@ -112,8 +111,8 @@ AUTHOR
 COPYRIGHT AND LICENCE
     This software is copyright (c) 2012 by Toby Inkster.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+    This is free software; you can redistribute it and/or modify it under the
+    same terms as the Perl 5 programming language system itself.
 
 DISCLAIMER OF WARRANTIES
     THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
